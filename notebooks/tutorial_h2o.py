@@ -51,3 +51,13 @@ for _ in range(ITERMAX):
 end = time.clock_gettime_ns(time.CLOCK_REALTIME)
 
 print(f'Time for the calculation of 1 step : {(end-start)*.000001/ITERMAX} ms')
+
+provide_elec = pq.electron_provided(ctx)
+assert (provide_elec == True)
+provide_nucl = pq.nucleus_provided(ctx)
+assert (provide_nucl == True)
+provide_ao_basis = pq.ao_basis_provided(ctx)
+assert (provide_ao_basis == True)
+provide_mo_basis = pq.mo_basis_provided(ctx)
+assert (provide_mo_basis == True)
+local_energy = pq.get_local_energy(ctx, 1)

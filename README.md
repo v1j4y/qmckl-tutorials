@@ -1,19 +1,19 @@
 
-# TREXIO tutorials
+# QMCkl tutorials
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/v1j4y/qmckl-tutorials/HEAD)
 
-The goal of this repository is to provide material for new users of the TREXIO library in general 
-and of the `trexio` Python API in particular.
+The goal of this repository is to provide material for new users of the QMCkl library in general 
+and of the `qmckl` Python API in particular.
 
 To obtain a local copy of the `.ipynb` files, you can
 [clone this repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) 
-and manually convert notebooks using, e.g. `jupytext --to notebook tutorial_benzene.md` command.
+and manually convert notebooks using, e.g. `jupytext --to notebook tutorial_h2o.md` command.
 
 
 ## Content
 
-1. [Learn how to write and read data using the `qmckl` Python API](notebooks/tutorial_h2o.ipynb): simple VMC using QMCkl.
+1. [Learn how to perform a simple VMC optimization using the `qmckl` Python API](notebooks/tutorial_h2o.ipynb): simple VMC using QMCkl.
 
 ### Why Jupyter Notebooks?
 
