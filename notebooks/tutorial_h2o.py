@@ -1,7 +1,6 @@
-""" 
-This is the test of the Python API of the QMCkl library.
-It is the `bench_mos.c` C code adapted from the `bench`
-repo and translated into Python with some modifications.
+#!/usr/bin/env python
+"""
+This is a demonstration of the Python API of the QMCkl library.
 """
 
 from os.path import join
