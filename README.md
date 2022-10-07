@@ -13,7 +13,7 @@ and manually convert notebooks using, e.g. `jupytext --to notebook tutorial_benz
 
 ## Content
 
-1. [Learn how to write and read data using the `qmckl` Python API](notebooks/tutorial_water.md): simple VMC using QMCkl.
+1. [Learn how to write and read data using the `qmckl` Python API](notebooks/tutorial_h2o.ipynb): simple VMC using QMCkl.
 
 ### Why Jupyter Notebooks?
 
