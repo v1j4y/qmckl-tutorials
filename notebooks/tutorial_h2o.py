@@ -9,7 +9,7 @@ import time
 import numpy as np
 
 import qmckl as pq
-from data.data import coord
+from data.data import coord, mo_index_alpha, mo_index_beta
 
 
 walk_num  = 100
@@ -42,6 +42,19 @@ size_max = 5*walk_num*elec_num*mo_num
 mo_vgl = pq.get_mo_basis_mo_vgl(ctx, size_max)
 assert mo_vgl.size == size_max
 
+# Set determinant
+pq.set_determinant_type(ctx, 'G')
+det_num_alpha = 1
+det_num_beta  = 1
+pq.set_determinant_det_num_alpha(ctx, det_num_alpha)
+pq.set_determinant_det_num_beta (ctx, det_num_beta )
+pq.set_determinant_det_num_beta (ctx, det_num_beta )
+elec_up_num = elec_num//2
+elec_down_num = elec_num//2
+
+pq.set_determinant_mo_index_alpha(ctx, mo_index_alpha)
+pq.set_determinant_mo_index_beta (ctx, mo_index_beta )
+
 start = time.clock_gettime_ns(time.CLOCK_REALTIME)
 
 for _ in range(ITERMAX):
@@ -63,4 +76,9 @@ assert (provide_ao_basis == True)
 provide_mo_basis = pq.mo_basis_provided(ctx)
 assert (provide_mo_basis == True)
 
-local_energy = pq.get_local_energy(ctx, 1)
+provide_det = pq.determinant_provided(ctx)
+assert (provide_det == True)
+
+provide_local_energy = pq.local_energy_provided(ctx)
+assert (provide_local_energy == True)
+#local_energy = pq.get_local_energy(ctx, walk_num)
