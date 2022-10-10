@@ -156,6 +156,7 @@ assert (provided_det == True)
 
 provided_local_energy = pq.local_energy_provided(ctx)
 assert (provided_local_energy == True)
+local_energy = pq.get_local_energy(ctx, walk_num)
 ```
 
 ## Generate coordinates
