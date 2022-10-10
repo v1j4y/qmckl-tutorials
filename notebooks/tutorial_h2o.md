@@ -157,3 +157,42 @@ assert (provided_det == True)
 provided_local_energy = pq.local_energy_provided(ctx)
 assert (provided_local_energy == True)
 ```
+
+## Generate coordinates
+
+Generate trial coordinates for the initial walker distribution.
+
+```python
+r = 10
+
+def generate_walkers(r):
+    """
+    Generate coordinates
+    """
+    import itertools
+
+    n_samples = 10
+
+    x = np.random.uniform(-r, r, size=n_samples)
+    y = np.random.uniform(-r, r, size=n_samples)
+    z = np.random.uniform(-r, r, size=n_samples)
+
+    coordsall = np.array(list(itertools.product(x,y,z)))
+    #np.savetxt("/tmp/coordsall.txt", coordsall, delimiter=',\t', fmt='%18.15f')
+    return(coordsall)
+```
+
+## Plot Local Energy
+
+Plot the local energy of each walker.
+
+```python
+if False:
+    import matplotlib.pyplot as plt
+    # Plotting
+    plt.figure(figsize=(7,7))
+    plt.plot(range(walk_num),local_energy, marker='o',  label='Samples')
+    plt.grid()
+    plt.legend(loc='upper right')
+    plt.show(block=True)
+```
