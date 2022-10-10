@@ -24,7 +24,7 @@ or in the virtual environment. If this is not the case, feel free to follow the 
 
 ```python
 try:
-    import qmckl as qp
+    import qmckl as pq
 except ImportError:
     raise Exception("Unable to import qmckl. Please check that qmckl is properly installed.")
 ```
